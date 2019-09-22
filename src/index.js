@@ -8,7 +8,7 @@ import { initialize, loadDevices, setCallState, store } from "./store";
 
 class Plugin extends FlexPlugin {
   constructor() {
-    super("JabraControlPlugin");
+    super("JabraCallControl");
   }
 
   init(flex, manager) {
