@@ -43,6 +43,6 @@ Run the following command to start the bundling:
 npm run build
 ```
 
-Afterwards, you'll find in your project a `build/` folder that contains a file with the name of `plugin-jabra-control.js`. Take this file and upload it into the Assets part of your Twilio Runtime.
+Afterwards, you'll find in your project a `build/` folder that contains a file with the name of `jabra-twilio-call-control-plugin.js`. Take this file and upload it into the Assets part of your Twilio Runtime.
 
 Note: Common packages like `React`, `ReactDOM`, `Redux` and `ReactRedux` are not bundled with the build because they are treated as external dependencies so the plugin will depend on Flex to provide them globally.
