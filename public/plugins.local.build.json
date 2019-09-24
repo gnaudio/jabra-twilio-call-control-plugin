@@ -1,8 +1,8 @@
 [
   {
-    "name": "JabraControlPlugin",
+    "name": "JabraCallControl",
     "version": "0.0.0",
-    "class": "JabraControlPlugin",
+    "class": "JabraCallControl",
     "requires": [
       {
         "@twilio/flex-ui": "^1"

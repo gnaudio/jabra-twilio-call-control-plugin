@@ -9,13 +9,13 @@ Download [plugin-jabra-call-control.js](https://github.com/gnaudio/jabra-twilio-
 You can also use in your own plugin, start by installing it via NPM og similar
 
 ```
-npm install flex-jabra-call-control
+npm install @jabra/twilio-flex-call-control-plugin
 ```
 
 In your plugin's `index.js` file import the plugin
 
 ```
-import "flex-jabra-call-control"
+import "@jabra/twilio-flex-call-control-plugin"
 ```
 
 ## Development
