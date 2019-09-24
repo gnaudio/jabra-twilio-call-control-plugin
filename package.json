@@ -6,7 +6,7 @@
     "start": "craco start",
     "build": "npm run build:dist && npm run build:lib",
     "build:dist": "craco build && ncp build/index.js dist/plugin-jabra-call-control.js",
-    "build:lib": "cross-env REACT_APP_BUILD_LIB=true craco build && ncp build/index.js lib/index.js",
+    "build:lib": "cross-env REACT_APP_BUILD_LIB=true craco build && ncp build/index.js lib/index.js && ncp build/index.js.map lib/index.js.map",
     "bootstrap": "flex-check-start",
     "postinstall": "npm run bootstrap",
     "prestart": "npm run bootstrap"
