@@ -1,7 +1,7 @@
 {
   "name": "@jabra/twilio-flex-call-control-plugin",
   "version": "1.0.0-beta.1",
-  "main": "build/plugin-jabra-call-control",
+  "main": "lib/index.js",
   "scripts": {
     "start": "craco start",
     "build": "npm run build:dist && npm run build:lib",
