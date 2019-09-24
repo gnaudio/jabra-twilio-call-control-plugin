@@ -6,8 +6,6 @@ const initialState = {
 };
 
 export function call(state = initialState, action) {
-  console.log(action);
-
   switch (action.type) {
     case SET_CALL_STATE:
       return {

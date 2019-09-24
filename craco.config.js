@@ -6,9 +6,7 @@ module.exports = {
     {
       plugin: {
         overrideWebpackConfig: ({ webpackConfig, context: { env } }) => {
-          if (env === "production")
-            webpackConfig.output.filename = "plugin-jabra-call-control.js";
-
+          if (env === "production") webpackConfig.output.filename = "index.js";
           return webpackConfig;
         }
       }

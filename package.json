@@ -4,7 +4,9 @@
   "main": "build/plugin-jabra-call-control",
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "npm run build:dist && npm run build:lib",
+    "build:dist": "craco build && ncp build/index.js dist/plugin-jabra-call-control.js",
+    "build:lib": "cross-env REACT_APP_BUILD_LIB=true craco build && ncp build/index.js lib/index.js",
     "bootstrap": "flex-check-start",
     "postinstall": "npm run bootstrap",
     "prestart": "npm run bootstrap"
@@ -26,7 +28,9 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "@twilio/flex-ui": "^1"
+    "@twilio/flex-ui": "^1",
+    "cross-env": "^6.0.0",
+    "ncp": "^2.0.0"
   },
   "browserslist": {
     "production": [

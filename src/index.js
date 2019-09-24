@@ -6,7 +6,9 @@ import CallControl from "./components/CallControl";
 import DeviceIndicator from "./components/DeviceIndicator";
 import { initialize, loadDevices, setCallState, store } from "./store";
 
-class Plugin extends FlexPlugin {
+export { store };
+
+export class Plugin extends FlexPlugin {
   constructor() {
     super("JabraCallControl");
   }
@@ -110,4 +112,6 @@ class Plugin extends FlexPlugin {
   };
 }
 
-loadPlugin(Plugin);
+if (process.env.REACT_APP_BUILD_LIB !== "true") {
+  loadPlugin(Plugin);
+}
