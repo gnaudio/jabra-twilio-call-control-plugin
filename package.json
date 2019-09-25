@@ -1,7 +1,10 @@
 {
   "name": "@gnaudio/twilio-flex-call-control-plugin",
   "version": "1.0.0-beta.1",
-  "description": "my-component React component",
+  "description": "Call-control in Twilio Flex using a Jabra headset",
+  "author": "GN Audio",
+  "license": "MIT",
+  "keywords": ["jabra", "browser", "twilio", "flex", "call-control"],
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -11,8 +14,16 @@
   "scripts": {
     "build": "nwb build-react-component"
   },
+  "homepage": "https://github.com/gnaudio/jabra-twilio-call-control-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gnaudio/jabra-twilio-call-control-plugin.git"
+  },
+  "bugs": {
+    "url": "https://developer.jabra.com/site/global/support/index.gsp"
+  },
   "dependencies": {
-    "@gnaudio/jabra-browser-integration": "^3.0.0-beta.1",
+    "@gnaudio/jabra-browser-integration": "3.0.0-beta.3",
     "react-redux": "^7.1.1",
     "react-tooltip": "^3.11.1",
     "redux": "^4.0.4",
@@ -26,12 +37,5 @@
     "nwb": "0.23.x",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
-  },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": "",
-  "keywords": [
-    "react-component"
-  ]
+  }
 }
