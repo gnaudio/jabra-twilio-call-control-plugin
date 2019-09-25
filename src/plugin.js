@@ -1,5 +1,5 @@
-import { FlexPlugin } from "flex-plugin";
 import * as jabra from "@gnaudio/jabra-browser-integration";
+import { FlexPlugin } from "flex-plugin";
 import React from "react";
 
 import CallControl from "./components/CallControl";
