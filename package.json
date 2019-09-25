@@ -20,8 +20,7 @@
   "license": "MIT",
   "author": "GN Audio",
   "files": [
-    "es",
-    "lib"
+    "dist"
   ],
   "main": "dist/twilio-flex-call-control-plugin.js",
   "module": "dist/twilio-flex-call-control-plugin.esm.js",
