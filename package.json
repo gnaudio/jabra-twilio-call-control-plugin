@@ -1,20 +1,30 @@
 {
   "name": "@gnaudio/twilio-flex-call-control-plugin",
   "version": "1.0.0-beta.1",
-  "description": "my-component React component",
+  "description": "Call-control in Twilio Flex using a Jabra headset",
   "keywords": [
-    "react-component"
+    "browser",
+    "call-control",
+    "flex",
+    "jabra",
+    "twilio"
   ],
-  "homepage": "",
-  "repository": "",
+  "homepage": "https://github.com/gnaudio/jabra-twilio-call-control-plugin",
+  "bugs": {
+    "url": "https://developer.jabra.com/site/global/support/index.gsp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gnaudio/jabra-twilio-call-control-plugin.git"
+  },
   "license": "MIT",
-  "author": "",
+  "author": "GN Audio",
   "files": [
     "es",
     "lib"
   ],
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "dist/twilio-flex-call-control-plugin.js",
+  "module": "dist/twilio-flex-call-control-plugin.esm.js",
   "scripts": {
     "build": "rollup -c"
   },
@@ -31,22 +41,21 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.6.2",
-    "@gnaudio/jabra-browser-integration": "^3.0.0-beta.1",
-    "@twilio/flex-ui": "^1.13.0",
-    "flex-plugin": "^2.9.1",
-    "react-redux": "^7.1.1",
+    "@gnaudio/jabra-browser-integration": "^3.0.0-beta.4",
     "react-tooltip": "^3.11.1",
-    "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "@twilio/flex-ui": "^1.13.0",
+    "flex-plugin": "^2.x",
+    "react": "16.x",
+    "react-redux": "^7.x",
+    "redux": "^4.x",
     "rollup": "^1.21.4",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -55,6 +64,10 @@
     "rollup-plugin-terser": "^5.1.2"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "@twilio/flex-ui": "^1.x",
+    "flex-plugin": "^2.x",
+    "react": "16.x",
+    "react-redux": "^7.x",
+    "redux": "^4.x"
   }
 }
