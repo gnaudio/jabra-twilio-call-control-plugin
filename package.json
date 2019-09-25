@@ -1,47 +1,37 @@
 {
-  "name": "@jabra/twilio-flex-call-control-plugin",
+  "name": "@gnaudio/twilio-flex-call-control-plugin",
   "version": "1.0.0-beta.1",
+  "description": "my-component React component",
   "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib"
+  ],
   "scripts": {
-    "start": "craco start",
-    "build": "npm run build:dist && npm run build:lib",
-    "build:dist": "craco build && ncp build/index.js dist/plugin-jabra-call-control.js",
-    "build:lib": "cross-env REACT_APP_BUILD_LIB=true craco build && ncp build/index.js lib/index.js && ncp build/index.js.map lib/index.js.map",
-    "bootstrap": "flex-check-start",
-    "postinstall": "npm run bootstrap",
-    "prestart": "npm run bootstrap"
+    "build": "nwb build-react-component"
   },
   "dependencies": {
-    "@craco/craco": "^5.5.0",
-    "@twilio/flex-ui": "^1.13.0",
-    "babel-polyfill": "^6.26.0",
-    "craco-config-flex-plugin": "^2.9.1",
-    "flex-plugin": "^2.9.1",
-    "jabra-browser-integration": "git+https://github.com/gnaudio/jabra-browser-integration.git#v3.0",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
+    "@gnaudio/jabra-browser-integration": "^3.0.0-beta.1",
     "react-redux": "^7.1.1",
-    "react-scripts": "^3.1.2",
     "react-tooltip": "^3.11.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.0"
   },
-  "devDependencies": {
-    "@twilio/flex-ui": "^1",
-    "cross-env": "^6.0.0",
-    "ncp": "^2.0.0"
+  "peerDependencies": {
+    "react": "16.x"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "devDependencies": {
+    "nwb": "0.23.x",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "author": "",
+  "homepage": "",
+  "license": "MIT",
+  "repository": "",
+  "keywords": [
+    "react-component"
+  ]
 }

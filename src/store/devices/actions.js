@@ -1,5 +1,5 @@
 import * as Flex from "@twilio/flex-ui";
-import * as jabra from "jabra-browser-integration";
+import * as jabra from "@gnaudio/jabra-browser-integration";
 
 export const LOAD_DEVICES = "LOAD_DEVICES";
 export const SET_ACTIVE_DEVICE = "SET_ACTIVE_DEVICE";

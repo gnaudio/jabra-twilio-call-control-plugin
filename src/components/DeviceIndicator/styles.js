@@ -1,7 +1,7 @@
 import ReactTooltip from "react-tooltip";
 import styled, { css } from "styled-components";
 
-import { ReactComponent as UnstyledLogo } from "../../assets/logo.svg";
+import UnstyledLogo from "../Logo";
 
 export const Base = styled.div`
   padding: 6px;

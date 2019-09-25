@@ -4,19 +4,25 @@ import { connect } from "react-redux";
 import DeviceSelector from "../DeviceSelector";
 import * as S from "./styles";
 
-const Device = ({ store, devices, isInitialized, isInitializing }) => {
+const Device = ({
+  store,
+  devices,
+  activeDevice,
+  isInitialized,
+  isInitializing
+}) => {
   let invalid;
 
   if (isInitializing) {
     invalid = "Browser SDK initializing...";
   } else if (!isInitialized) {
     invalid = "Browser SDK installation incomplete. Please (re)install";
-  } else if (devices.length < 1) {
+  } else if (devices.length < 1 || !activeDevice) {
     invalid = "Couldn't find any Jabra devices";
   }
 
   return (
-    <>
+    <React.Fragment>
       <S.Base>
         <S.Logo data-tip data-for="jabra-device" invalid={invalid} />
       </S.Base>
@@ -27,7 +33,7 @@ const Device = ({ store, devices, isInitialized, isInitializing }) => {
           <DeviceSelector store={store}></DeviceSelector>
         )}
       </S.Tooltip>
-    </>
+    </React.Fragment>
   );
 };
 
@@ -35,7 +41,8 @@ const mapStateToProps = ({ jabra }) => ({
   isInitialized: jabra.sdk.isInitialized,
   isInitializing: jabra.sdk.isInitializing,
   devices: jabra.devices.items,
-  activeDevice: jabra.devices.activeDevice
+  devices: jabra.devices.items,
+  activeDevice: jabra.devices.active
 });
 
 export default connect(mapStateToProps)(Device);

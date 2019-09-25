@@ -1,4 +1,4 @@
-# Twilio Flex Jabra Control Plugin
+# Twilio Flex Jabra Call Control Plugin
 
 This plugin allows you the control Twilio Flex using a Jabra headset.
 
@@ -9,25 +9,35 @@ Download [plugin-jabra-call-control.js](https://github.com/gnaudio/jabra-twilio-
 You can also use in your own plugin, start by installing it via NPM og similar
 
 ```
-npm install @jabra/twilio-flex-call-control-plugin
+npm install @gnaudio/twilio-flex-call-control-plugin
 ```
 
 In your plugin's `index.js` file import the plugin
 
 ```
-import "@jabra/twilio-flex-call-control-plugin"
+import "@gnaudio/twilio-flex-call-control-plugin"
 ```
 
 ## Development
 
 Make sure you have [Node.js](https://nodejs.org) as well as [`npm`](https://npmjs.com) installed.
 
-Afterwards, install the dependencies by running `npm install`:
+Afterwards, install the dependencies by running:
 
-```bash
-cd
+```
+npm install
+```
 
-# If you use npm
+When you make changes to the plugin code, make sure to run:
+
+```
+npm run build
+```
+
+Then change directory to example, and run:
+
+```
+cd example
 npm install
 ```
 
@@ -47,14 +57,21 @@ When you make changes to your code, the browser window will be automatically ref
 
 ## Deploy
 
-Once you are happy with your plugin, you have to bundle it in order to deploy it to Twilio Flex.
-
+Once you are happy with your plugin, you have to bundle it in order to deploy it to Twilio Flex. You do that from the example folder.
 Run the following command to start the bundling:
 
 ```bash
+cd example
 npm run build
 ```
 
-Afterwards, you'll find in your project a `build/` folder that contains a file with the name of `jabra-twilio-call-control-plugin.js`. Take this file and upload it into the Assets part of your Twilio Runtime.
+Afterwards, you'll find a `build/` folder that contains a file with the name of `jabra-twilio-call-control-plugin.js`. Take this file and upload it into the Assets part of your Twilio Runtime.
+And make a release on GitHub with said file.
 
-Note: Common packages like `React`, `ReactDOM`, `Redux` and `ReactRedux` are not bundled with the build because they are treated as external dependencies so the plugin will depend on Flex to provide them globally.
+To deploy to npm run:
+
+```
+npx np
+```
+
+And follow the onscreen instructions

@@ -8,6 +8,6 @@
         "@twilio/flex-ui": "^1"
       }
     ],
-    "src": "http://localhost:3000/@jabra/twilio-flex-call-control-plugin.js"
+    "src": "http://127.0.0.1:8085"
   }
 ]

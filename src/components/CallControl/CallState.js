@@ -1,4 +1,4 @@
-import * as jabra from "jabra-browser-integration";
+import * as jabra from "@gnaudio/jabra-browser-integration";
 import { connect } from "react-redux";
 
 const mapStateToProps = ({ flex }) => ({
