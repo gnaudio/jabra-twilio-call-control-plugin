@@ -4,7 +4,13 @@
   "description": "Call-control in Twilio Flex using a Jabra headset",
   "author": "GN Audio",
   "license": "MIT",
-  "keywords": ["jabra", "browser", "twilio", "flex", "call-control"],
+  "keywords": [
+    "jabra",
+    "browser",
+    "twilio",
+    "flex",
+    "call-control"
+  ],
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -24,18 +30,18 @@
   },
   "dependencies": {
     "@gnaudio/jabra-browser-integration": "3.0.0-beta.3",
-    "react-redux": "^7.1.1",
-    "react-tooltip": "^3.11.1",
-    "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0",
-    "styled-components": "^4.4.0"
+    "react-redux": "7.1.1",
+    "react-tooltip": "3.11.1",
+    "redux": "4.0.4",
+    "redux-thunk": "2.3.0",
+    "styled-components": "4.4.0"
   },
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
     "nwb": "0.23.x",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
   }
 }
