@@ -2,36 +2,59 @@
   "name": "@gnaudio/twilio-flex-call-control-plugin",
   "version": "1.0.0-beta.1",
   "description": "my-component React component",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "keywords": [
+    "react-component"
+  ],
+  "homepage": "",
+  "repository": "",
+  "license": "MIT",
+  "author": "",
   "files": [
     "es",
     "lib"
   ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "scripts": {
-    "build": "nwb build-react-component"
+    "build": "rollup -c"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "dependencies": {
+    "@babel/core": "^7.6.2",
     "@gnaudio/jabra-browser-integration": "^3.0.0-beta.1",
+    "@twilio/flex-ui": "^1.13.0",
+    "flex-plugin": "^2.9.1",
     "react-redux": "^7.1.1",
     "react-tooltip": "^3.11.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.0"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.2"
+  },
   "peerDependencies": {
     "react": "16.x"
-  },
-  "devDependencies": {
-    "nwb": "0.23.x",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
-  },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": "",
-  "keywords": [
-    "react-component"
-  ]
+  }
 }
