@@ -17,7 +17,11 @@ npm install @gnaudio/twilio-flex-call-control-plugin
 In your plugin's `index.js` file import the plugin
 
 ```
-import "@gnaudio/twilio-flex-call-control-plugin"
+import { loadPlugin } from "flex-plugin";
+import { Plugin } from "@gnaudio/twilio-flex-call-control-plugin";
+
+loadPlugin(Plugin);
+
 ```
 
 ## Development
