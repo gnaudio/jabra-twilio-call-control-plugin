@@ -5,7 +5,7 @@ import React from "react";
 import CallControl from "./components/CallControl";
 import DeviceIndicator from "./components/DeviceIndicator";
 import { initialize, loadDevices, setCallState, store } from "./store";
-import { handleReservation } from "./handleReservation";
+import { handleReservation } from "./utils/handleReservation";
 
 export class Plugin extends FlexPlugin {
   constructor() {
