@@ -13,7 +13,8 @@
     "@twilio/flex-ui": "^1.13.0",
     "craco-config-flex-plugin": "^2",
     "flex-plugin": "^2.9.1",
-    "react-scripts": "^3.0.0"
+    "react-scripts": "^3.0.0",
+    "recharts": "^1.7.1"
   },
   "browserslist": {
     "production": [

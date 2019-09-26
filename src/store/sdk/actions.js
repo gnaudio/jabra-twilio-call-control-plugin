@@ -1,4 +1,4 @@
-import * as jabra from "@gnaudio/jabra-browser-integration";
+import { jabra } from "../../jabra";
 
 import { loadDevices } from "../devices/actions";
 

@@ -1,9 +1,11 @@
 import * as Flex from "@twilio/flex-ui";
-import * as jabra from "@gnaudio/jabra-browser-integration";
+import { jabra } from "../../jabra";
 
 export const LOAD_DEVICES = "LOAD_DEVICES";
 export const SET_ACTIVE_DEVICE = "SET_ACTIVE_DEVICE";
 export const REMOVE_ACTIVE_DEVICE = "REMOVE_ACTIVE_DEVICE";
+export const SET_MMI_FOCUS = "SET_MMI_FOCUS";
+export const REMOVE_MMI_FOCUS = "REMOVE_MMI_FOCUS";
 
 export const loadDevices = () => async (dispatch, getState) => {
   const { active } = getState().jabra.devices;
@@ -15,14 +17,14 @@ export const loadDevices = () => async (dispatch, getState) => {
     if (!active) {
       const device = await jabra.getActiveDevice();
 
-      dispatch(setActiveDevice(device.deviceID));
+      await dispatch(setActiveDevice(device.deviceID));
     }
     // If the devices list no longer contains the active device
     else if (!devices.some(device => device.deviceID === active.deviceID)) {
       // If there is more devices available, set the first one as the new active
       // device
       if (devices.length > 0) {
-        dispatch(setActiveDevice(devices[0].deviceID));
+        await dispatch(setActiveDevice(devices[0].deviceID));
       } else {
         dispatch(removeActiveDevice());
       }
@@ -56,10 +58,32 @@ export const setActiveDevice = id => async dispatch => {
       );
     }
 
+    if (device.deviceFeatures.includes(jabra.DeviceFeature.RemoteMMIv2)) {
+      await dispatch(setMMIFocus());
+    } else {
+      dispatch(removeMMIFocus());
+    }
+
     dispatch({ type: SET_ACTIVE_DEVICE, status: "success", payload: device });
   } catch (error) {
     dispatch({ type: SET_ACTIVE_DEVICE, status: "error", payload: error });
   }
 };
 
-export const removeActiveDevice = () => ({ type: REMOVE_ACTIVE_DEVICE });
+export const removeActiveDevice = () => dispatch => {
+  dispatch(removeMMIFocus());
+  dispatch({ type: REMOVE_ACTIVE_DEVICE });
+};
+
+export const setMMIFocus = () => async dispatch => {
+  try {
+    await jabra.setMmiFocus(jabra.RemoteMmiType.MMI_TYPE_DOT3, true);
+    await jabra.setMmiFocus(jabra.RemoteMmiType.MMI_TYPE_DOT4, true);
+
+    dispatch({ type: SET_MMI_FOCUS, status: "success" });
+  } catch (error) {
+    dispatch({ type: SET_MMI_FOCUS, status: "error", payload: error });
+  }
+};
+
+export const removeMMIFocus = () => ({ type: REMOVE_MMI_FOCUS });

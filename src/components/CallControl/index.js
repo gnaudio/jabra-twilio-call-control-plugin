@@ -1,15 +1,34 @@
 import React from "react";
+import { jabra } from "../../jabra";
 import { connect } from "react-redux";
 
-import CallState from "./CallState";
+const CallControl = ({ available, callState, activeDevice }) => {
+  if (!activeDevice) return null;
 
-const CallControl = connect(({ jabra }) => ({ jabra }))(({ jabra }) => {
-  return (
-    <CallState
-      callState={jabra.call.state}
-      activeDevice={jabra.devices.active}
-    />
-  );
+  if (available && callState === "incoming") {
+    jabra.ring();
+    return null;
+  }
+
+  if (callState === "accepted") {
+    jabra.offHook();
+    return null;
+  }
+
+  jabra.onHook();
+
+  return null;
+};
+
+const mapStateToPropsFlex = ({ flex }) => ({
+  available: flex.worker.activity.available
 });
 
-export default CallControl;
+const mapStateToPropsJabra = ({ jabra }) => ({
+  activeDevice: jabra.devices.active,
+  callState: jabra.call.state
+});
+
+export default connect(mapStateToPropsJabra)(({ store, ...props }) =>
+  React.createElement(connect(mapStateToPropsFlex)(CallControl), props)
+);

@@ -1,12 +1,17 @@
 import {
   LOAD_DEVICES,
   SET_ACTIVE_DEVICE,
-  REMOVE_ACTIVE_DEVICE
+  REMOVE_ACTIVE_DEVICE,
+  SET_MMI_FOCUS,
+  REMOVE_MMI_FOCUS
 } from "./actions";
+import { jabra } from "../../jabra";
 
 const initialState = {
   items: [],
-  active: null
+  active: null,
+  mmi: true,
+  analytics: {}
 };
 
 export function devices(state = initialState, action) {
@@ -23,7 +28,13 @@ export function devices(state = initialState, action) {
       if (action.status === "success")
         return {
           ...state,
-          active: action.payload
+          active: action.payload,
+          analytics: {
+            ...state.analytics,
+            [action.payload.deviceID]: new jabra.Analytics(
+              action.payload.deviceID
+            )
+          }
         };
       break;
 
@@ -31,6 +42,26 @@ export function devices(state = initialState, action) {
       return {
         ...state,
         active: null
+      };
+
+    case SET_MMI_FOCUS:
+      if (action.status === "success")
+        return {
+          ...state,
+          mmi: true
+        };
+
+      if (action.status === "error")
+        return {
+          ...state,
+          mmi: false
+        };
+      break;
+
+    case REMOVE_MMI_FOCUS:
+      return {
+        ...state,
+        mmi: false
       };
 
     default:
