@@ -10,7 +10,8 @@ export function call(state = initialState, action) {
     case SET_CALL_STATE:
       return {
         ...state,
-        state: action.payload
+        state: action.payload.state,
+        reservation: action.payload.reservation
       };
 
     default:

@@ -61,10 +61,10 @@ export class Plugin extends FlexPlugin {
       });
     });
 
-    store.dispatch(setCallState("incoming"));
+    store.dispatch(setCallState("incoming", reservation));
   };
 
-  handleCallAccepted = () => {
+  handleCallAccepted = reservation => {
     const connection = this.manager.voiceClient.activeConnection();
 
     connection.on("mute", muted => {
@@ -84,11 +84,11 @@ export class Plugin extends FlexPlugin {
       this.manager.voiceClient.activeConnection().mute(false);
     });
 
-    store.dispatch(setCallState("accepted"));
+    store.dispatch(setCallState("accepted", reservation));
   };
 
-  handleCallWrapping = () => {
-    store.dispatch(setCallState("wrapping"));
+  handleCallWrapping = reservation => {
+    store.dispatch(setCallState("wrapping", reservation));
   };
 
   handleCallCanceled = () => {
