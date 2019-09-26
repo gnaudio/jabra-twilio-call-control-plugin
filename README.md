@@ -21,7 +21,6 @@ import { loadPlugin } from "flex-plugin";
 import { Plugin } from "@gnaudio/twilio-flex-call-control-plugin";
 
 loadPlugin(Plugin);
-
 ```
 
 ## Development
