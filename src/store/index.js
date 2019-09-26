@@ -6,13 +6,12 @@ import { jabraReducer } from "./reducer";
 
 export * from "./actions";
 
+// Create a redux store, and export it for use thoughout the application
 export const store = createStore(
   combineReducers({
     jabra: jabraReducer,
     flex: FlexReducer
   }),
-  compose(
-    applyMiddleware(thunk),
-    applyFlexMiddleware()
-  )
+  // Add the redux thunk middleware, to allow for async actions
+  compose(applyMiddleware(thunk))
 );

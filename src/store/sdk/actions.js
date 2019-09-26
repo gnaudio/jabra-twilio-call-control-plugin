@@ -6,6 +6,7 @@ export const INITIALIZE_REQUEST = "INITIALIZE_REQUEST";
 export const INITIALIZE_FAILURE = "INITIALIZE_FAILURE";
 export const INITIALIZE_SUCCESS = "INITIALIZE_SUCCESS";
 
+// Initialize the jabra sdk and load devices
 export const initialize = () => async dispatch => {
   dispatch({ type: INITIALIZE_REQUEST });
 

@@ -7,6 +7,8 @@ export const REMOVE_ACTIVE_DEVICE = "REMOVE_ACTIVE_DEVICE";
 export const SET_MMI_FOCUS = "SET_MMI_FOCUS";
 export const REMOVE_MMI_FOCUS = "REMOVE_MMI_FOCUS";
 
+// Load jabra devices, set an active device if no active device, or if active
+// device has been removed
 export const loadDevices = () => async (dispatch, getState) => {
   const { active } = getState().jabra.devices;
 
@@ -36,6 +38,7 @@ export const loadDevices = () => async (dispatch, getState) => {
   }
 };
 
+// Set active jabra device
 export const setActiveDevice = id => async dispatch => {
   try {
     await jabra.setActiveDeviceId(id);
@@ -70,11 +73,13 @@ export const setActiveDevice = id => async dispatch => {
   }
 };
 
+// Remove active device
 export const removeActiveDevice = () => dispatch => {
   dispatch(removeMMIFocus());
   dispatch({ type: REMOVE_ACTIVE_DEVICE });
 };
 
+// Set mmi focus on active device
 export const setMMIFocus = () => async dispatch => {
   try {
     await jabra.setMmiFocus(jabra.RemoteMmiType.MMI_TYPE_DOT3, true);
@@ -86,4 +91,5 @@ export const setMMIFocus = () => async dispatch => {
   }
 };
 
+// Remove mmi focus on active device
 export const removeMMIFocus = () => ({ type: REMOVE_MMI_FOCUS });

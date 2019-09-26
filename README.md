@@ -39,6 +39,14 @@ When you make changes to the plugin code, make sure to run:
 npm run build
 ```
 
+Or run
+
+```
+npm run start
+```
+
+To start the build process in watch mode
+
 Then change directory to example, and run:
 
 ```
@@ -49,13 +57,13 @@ npm install
 In order to develop locally, you can use the Webpack Dev Server by running:
 
 ```bash
-npm start
+npm run start
 ```
 
 This will automatically start up the Webpack Dev Server and open the browser for you. Your app will run on `http://localhost:8080`. If you want to change that you can do this by setting the `PORT` environment variable:
 
 ```bash
-PORT=3000 npm start
+PORT=3000 npm run start
 ```
 
 When you make changes to your code, the browser window will be automatically refreshed.

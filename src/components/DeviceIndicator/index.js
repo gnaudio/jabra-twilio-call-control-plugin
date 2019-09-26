@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import DeviceSelector from "../DeviceSelector";
 import * as S from "./styles";
 
-const Device = ({
+// This component represents the deviceIndicator shown in the main menu bar
+const DeviceIndicator = ({
   store,
   devices,
   activeDevice,
@@ -45,4 +46,4 @@ const mapStateToProps = ({ jabra }) => ({
   activeDevice: jabra.devices.active
 });
 
-export default connect(mapStateToProps)(Device);
+export default connect(mapStateToProps)(DeviceIndicator);

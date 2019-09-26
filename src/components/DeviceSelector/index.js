@@ -4,6 +4,13 @@ import { connect } from "react-redux";
 import { setActiveDevice } from "../../store";
 import * as S from "./styles";
 
+/**
+ * This component shows a list of availble jabra devices, and activates the
+ * device whenever it's clicked
+ *
+ * @class DeviceSelector
+ * @extends {React.Component}
+ */
 class DeviceSelector extends React.Component {
   handleChange = event => {
     this.props.dispatch(setActiveDevice(event.target.value));
