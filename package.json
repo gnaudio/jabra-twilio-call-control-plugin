@@ -1,6 +1,6 @@
 {
   "name": "@gnaudio/twilio-flex-call-control-plugin",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Call-control in Twilio Flex using a Jabra headset",
   "keywords": [
     "browser",
