@@ -7,9 +7,13 @@ import { connect } from "react-redux";
 
 const Analytics = ({ analytics }) => (
   <S.Analytics>
-    <ArmPosition analytics={analytics} />
-    <Stats analytics={analytics} />
-    <AcousticLevel analytics={analytics} />
+    {analytics && (
+      <>
+        <ArmPosition analytics={analytics} />
+        <Stats analytics={analytics} />
+        <AcousticLevel analytics={analytics} />
+      </>
+    )}
   </S.Analytics>
 );
 

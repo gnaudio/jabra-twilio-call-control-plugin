@@ -25,18 +25,23 @@ export function devices(state = initialState, action) {
       break;
 
     case SET_ACTIVE_DEVICE:
-      if (action.status === "success")
-        return {
+      if (action.status === "success") {
+        let newState = {
           ...state,
-          active: action.payload,
-          analytics: {
+          active: action.payload
+        };
+
+        if (!state.analytics.hasOwnProperty(action.payload.deviceID)) {
+          newState.analytics = {
             ...state.analytics,
             [action.payload.deviceID]: new jabra.Analytics(
               action.payload.deviceID
             )
-          }
-        };
-      break;
+          };
+        }
+
+        return newState;
+      }
 
     case REMOVE_ACTIVE_DEVICE:
       return {
