@@ -76,12 +76,3 @@ npm run build
 ```
 
 Afterwards, you'll find a `build/` folder that contains a file with the name of `jabra-twilio-call-control-plugin.js`. Take this file and upload it into the Assets part of your Twilio Runtime.
-And make a release on GitHub with said file.
-
-To deploy to npm run:
-
-```
-npx np
-```
-
-And follow the onscreen instructions
