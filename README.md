@@ -8,7 +8,7 @@ This plugin allows you to control Twilio Flex using a Jabra headset.
 
 Download [plugin-jabra-call-control.js](https://github.com/gnaudio/jabra-twilio-call-control-plugin/releases/download/1.0.0-beta.4/plugin-jabra-call-control.js), take this file and upload it into the Assets part of your Twilio Runtime.
 
-You can also use it directly in your own plugin, if you haven't yet started your own Twilio Flex plugin, [get started here](https://www.twilio.com/docs/flex/quickstart/getting-started-plugin), if you have started, start using this plugin by installing it with npm or similar:
+You can also use it directly in your own plugin. If you haven't yet started your own Twilio Flex plugin, [get started here](https://www.twilio.com/docs/flex/quickstart/getting-started-plugin). If you have started, start using this plugin by installing it with npm or similar:
 
 ```
 npm install @gnaudio/twilio-flex-call-control-plugin
@@ -62,12 +62,7 @@ In order to develop locally, you can use the Webpack Dev Server by running:
 npm run start
 ```
 
-This will automatically start up the Webpack Dev Server and open the browser for you. Your app will run on `http://localhost:8080`. If you want to change that you can do this by setting the `PORT` environment variable:
-
-```bash
-PORT=3000 npm run start
-```
-
+This will automatically start up the Webpack Dev Server and open the browser for you. Your app will run on `http://localhost:3000`.
 When you make changes to your code, the browser window will be automatically refreshed.
 
 ## Deploy
