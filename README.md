@@ -6,7 +6,7 @@ This plugin allows you the control Twilio Flex using a Jabra headset.
 
 ## Installation
 
-Download [plugin-jabra-call-control.js](https://github.com/gnaudio/jabra-twilio-call-control-plugin/releases/download/1.0.0-beta.1/plugin-jabra-call-control.js), take this file and upload it into the Assets part of your Twilio Runtime.
+Download [plugin-jabra-call-control.js](https://github.com/gnaudio/jabra-twilio-call-control-plugin/releases/download/1.0.0-beta.3/plugin-jabra-call-control.js), take this file and upload it into the Assets part of your Twilio Runtime.
 
 You can also use in your own plugin, start by installing it via NPM og similar
 
