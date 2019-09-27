@@ -27,6 +27,8 @@ loadPlugin(Plugin);
 
 Make sure you have [Node.js](https://nodejs.org) as well as [`npm`](https://npmjs.com) installed.
 
+Make a copy of `appConfig.example.js` rename it `appConfig.js`, in the file, fill in the `accountSid`, with your Twilio Flex `accountSid`.
+
 Afterwards, install the dependencies by running:
 
 ```
