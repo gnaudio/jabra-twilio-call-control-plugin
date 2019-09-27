@@ -1,14 +1,14 @@
 # Twilio Flex Jabra Call Control Plugin
 
-This plugin allows you the control Twilio Flex using a Jabra headset.
+This plugin allows you to control Twilio Flex using a Jabra headset.
 
 **Warning: This software is in BETA. The software can be considered unstable, possibly untested and might be updated at any time. Use at your own risk. If you want to use something stable, please await completion of our development and Q/A process.**
 
 ## Installation
 
-Download [plugin-jabra-call-control.js](https://github.com/gnaudio/jabra-twilio-call-control-plugin/releases/download/1.0.0-beta.3/plugin-jabra-call-control.js), take this file and upload it into the Assets part of your Twilio Runtime.
+Download [plugin-jabra-call-control.js](https://github.com/gnaudio/jabra-twilio-call-control-plugin/releases/download/1.0.0-beta.4/plugin-jabra-call-control.js), take this file and upload it into the Assets part of your Twilio Runtime.
 
-You can also use in your own plugin, start by installing it via NPM og similar
+You can also use it directly in your own plugin, if you haven't yet started your own Twilio Flex plugin, [get started here](https://www.twilio.com/docs/flex/quickstart/getting-started-plugin), if you have started, start using this plugin by installing it with npm or similar:
 
 ```
 npm install @gnaudio/twilio-flex-call-control-plugin
@@ -27,7 +27,7 @@ loadPlugin(Plugin);
 
 Make sure you have [Node.js](https://nodejs.org) as well as [`npm`](https://npmjs.com) installed.
 
-Make a copy of `appConfig.example.js` rename it `appConfig.js`, in the file, fill in the `accountSid`, with your Twilio Flex `accountSid`.
+Make a copy of `public/appConfig.example.js` rename it `public/appConfig.js`, in the file, fill in the `accountSid`, with your Twilio Flex `accountSid`.
 
 Afterwards, install the dependencies by running:
 
@@ -49,7 +49,7 @@ npm run start
 
 To start the build process in watch mode
 
-Then change directory to example, and run:
+Open a new terminal and change directory to example, and install packages:
 
 ```
 cd example
