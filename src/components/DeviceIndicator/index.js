@@ -15,9 +15,9 @@ const DeviceIndicator = ({
   let invalid;
 
   if (isInitializing) {
-    invalid = "Browser SDK initializing...";
+    invalid = "Jabra Browser SDK initializing...";
   } else if (!isInitialized) {
-    invalid = "Browser SDK installation incomplete. Please (re)install";
+    invalid = "Jabra Browser SDK installation incomplete. Please (re)install";
   } else if (devices.length < 1 || !activeDevice) {
     invalid = "Couldn't find any Jabra devices";
   }
