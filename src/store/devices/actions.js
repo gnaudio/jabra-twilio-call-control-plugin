@@ -13,7 +13,10 @@ export const loadDevices = () => async (dispatch, getState) => {
   const { active } = getState().jabra.devices;
 
   try {
-    const devices = await jabra.getDevices();
+    // Get devices, and filter out all BT devices
+    const devices = (await jabra.getDevices()).filter(
+      device => device.deviceConnection !== "BT"
+    );
 
     // If no active device set the first device as the active one
     if (!active) {

@@ -11,8 +11,7 @@ module.exports = {
           );
 
           if (env === "production")
-            webpackConfig.output.filename =
-              "jabra-twilio-call-control-plugin.js";
+            webpackConfig.output.filename = "plugin-jabra-call-control.js";
 
           return webpackConfig;
         }
