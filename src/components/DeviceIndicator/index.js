@@ -31,7 +31,7 @@ const DeviceIndicator = ({
         {invalid ? (
           <S.Error>{invalid}</S.Error>
         ) : (
-          <DeviceSelector store={store}></DeviceSelector>
+          <DeviceSelector store={store}/>
         )}
       </S.Tooltip>
     </React.Fragment>
@@ -41,7 +41,6 @@ const DeviceIndicator = ({
 const mapStateToProps = ({ jabra }) => ({
   isInitialized: jabra.sdk.isInitialized,
   isInitializing: jabra.sdk.isInitializing,
-  devices: jabra.devices.items,
   devices: jabra.devices.items,
   activeDevice: jabra.devices.active
 });
