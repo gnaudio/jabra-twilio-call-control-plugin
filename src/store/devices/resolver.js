@@ -15,10 +15,12 @@ const initialState = {
 };
 
 export function devices(state = initialState, action) {
-  switch (action.type) {
+    var data;
+
+    switch (action.type) {
     case LOAD_DEVICES:
       if (action.status === "success")
-        return {
+          data = {
           ...state,
           items: action.payload
         };
@@ -40,36 +42,41 @@ export function devices(state = initialState, action) {
           };
         }
 
-        return newState;
-      }
+          data = newState;
+          }
+          break;
 
     case REMOVE_ACTIVE_DEVICE:
-      return {
+          data = {
         ...state,
-        active: null
-      };
+          active: null
+          };
+          break;
 
     case SET_MMI_FOCUS:
       if (action.status === "success")
-        return {
+          data = {
           ...state,
           mmi: true
         };
 
       if (action.status === "error")
-        return {
+          data = {
           ...state,
           mmi: false
         };
       break;
 
     case REMOVE_MMI_FOCUS:
-      return {
+          data = {
         ...state,
         mmi: false
-      };
+          };
+          break;
 
     default:
-      return state;
-  }
+          data = state;
+          break;
+    }
+    return data;
 }
