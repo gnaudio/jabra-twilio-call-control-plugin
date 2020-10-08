@@ -41,13 +41,15 @@ export function devices(state = initialState, action) {
         }
 
         return newState;
-      }
+          }
+          break;
 
     case REMOVE_ACTIVE_DEVICE:
       return {
         ...state,
-        active: null
-      };
+          active: null
+          };
+          break;
 
     case SET_MMI_FOCUS:
       if (action.status === "success")
@@ -67,9 +69,11 @@ export function devices(state = initialState, action) {
       return {
         ...state,
         mmi: false
-      };
+          };
+          break;
 
     default:
-      return state;
+          return state;
+          break;
   }
 }
